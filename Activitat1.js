@@ -99,6 +99,31 @@ var c = new circle(3);
 console.log('Area =', c.area().toFixed(2));
 console.log('perimeter =', c.perimeter().toFixed(2));
 /*Exercici 7*/
+function all_values(obj) {
+  var keys = _keys(obj);
+  var length = keys.length;
+  var values = Array(length);
+  for (var i = 0; i < length; i++) {
+    values[i] = obj[keys[i]];
+  }
+  return values;
+}
+function _keys(obj) 
+{
+  if (!isObject(obj)) return [];
+  if (Object.keys) return Object.keys(obj);
+  var keys = [];
+  for (var key in obj) if (_.has(obj, key)) keys.push(key);
+  return keys;
+}
+function isObject(obj)   
+{  
+  var type = typeof obj;  
+  return type === 'function' || type === 'object' && !!obj;  
+} 
+console.log(all_values({ref: 'BBDD',nom: 'Bases de Dades',hores: 180,UF: "['UF1','UF2','UF3','UF4']",professor: 'Pep Parés',
+alumnes: "['alu1','alu2','alu13','alu4','alu5']"}));
+
 /*Exercici 8*/
 function key_value_pairs(obj) 
    {
@@ -125,7 +150,8 @@ function isObject(obj)
     var type = typeof obj;
     return type === 'function' || type === 'object' && !!obj;
   }
-console.log(key_value_pairs({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));
+console.log(key_value_pairs({ref: 'BBDD',nom: 'Bases de Dades',hores: 180,UF: "['UF1','UF2','UF3','UF4']",professor: 'Pep Parés',
+alumnes: "['alu1','alu2','alu13','alu4','alu5']"}));
 /*Exercici 9*/
 function allKeys(obj) {
     if (!isObject(obj)) return [];
@@ -147,4 +173,5 @@ console.log(allKeys(new Student("Sara")));
 function hasKey(obj, key) {
     return obj != null && hasOwnProperty.call(obj, key);
   }
-console.log(hasKey({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}, "green"));
+console.log(hasKey({ref: 'BBDD',nom: 'Bases de Dades',hores: 180,UF: "['UF1','UF2','UF3','UF4']",professor: 'Pep Parés',
+alumnes: "['alu1','alu2','alu13','alu4','alu5']"}));
