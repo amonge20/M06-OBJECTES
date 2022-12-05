@@ -33,7 +33,6 @@ Object.objsize = function(Myobj) {
     }
     return osize;
 };
-
 var Asignatura = {
     ref: 'BBDD',
     nom: 'Bases de Dades',
@@ -42,7 +41,6 @@ var Asignatura = {
     professor: 'Pep Parés',
     alumnes: ['alu1','alu2','alu13','alu4','alu5']
 };
-
 var objsize = Object.objsize(Asignatura);
 console.log('El tamany de la següent secció és: '+objsize);
 /*Exercici 4*/
